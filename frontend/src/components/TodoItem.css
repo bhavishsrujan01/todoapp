@@ -1,0 +1,174 @@
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.todo-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.todo-item.completed .todo-title {
+  text-decoration: line-through;
+  opacity: 0.45;
+}
+
+.todo-item.completed .todo-desc {
+  opacity: 0.3;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  margin-top: 2px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  color: white;
+}
+
+.checkbox:hover {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.checkbox.checked {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+  min-width: 0;
+}
+
+.todo-title {
+  font-size: 0.975rem;
+  font-weight: 500;
+  color: #e4e4e7;
+  transition: all 0.25s ease;
+  word-break: break-word;
+}
+
+.todo-desc {
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.btn-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  margin-top: 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  opacity: 0;
+}
+
+.todo-item:hover .btn-delete {
+  opacity: 1;
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Edit mode */
+.edit-mode {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 0.625rem 0.875rem;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.06);
+  color: #e4e4e7;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.edit-input:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.edit-desc {
+  font-size: 0.85rem;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.btn-save, .btn-cancel {
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+}
+
+.btn-save:hover {
+  box-shadow: 0 3px 10px rgba(139, 92, 246, 0.3);
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.1);
+}

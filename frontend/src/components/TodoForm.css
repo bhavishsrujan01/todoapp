@@ -1,0 +1,75 @@
+.todo-form {
+  margin-bottom: 2rem;
+}
+
+.form-main {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #e4e4e7;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  outline: none;
+  resize: none;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-input:focus {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.06);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.desc-input {
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.btn-add:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.45);
+}
+
+.btn-add:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
