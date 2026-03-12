@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000';
+// In production (Vercel), frontend and backend share the same domain
+// In development, we point to the local FastAPI server
+const API_BASE_URL = import.meta.env.PROD ? '' : 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -10,21 +12,21 @@ const api = axios.create({
 });
 
 export const getTodos = async () => {
-  const response = await api.get('/todos/');
+  const response = await api.get('/api/todos/');
   return response.data;
 };
 
 export const createTodo = async (todo) => {
-  const response = await api.post('/todos/', todo);
+  const response = await api.post('/api/todos/', todo);
   return response.data;
 };
 
 export const updateTodo = async (id, todo) => {
-  const response = await api.put(`/todos/${id}`, todo);
+  const response = await api.put(`/api/todos/${id}`, todo);
   return response.data;
 };
 
 export const deleteTodo = async (id) => {
-  const response = await api.delete(`/todos/${id}`);
+  const response = await api.delete(`/api/todos/${id}`);
   return response.data;
 };
